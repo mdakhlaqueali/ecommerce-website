@@ -23,10 +23,12 @@ const Cart = () => {
     cartCtx.removeItem(index);
   };
 
+  const styling = {backgroundColor:"white", color:"red", fontWeight:"bold", borderRadius:"10px", padding:"5px 5px"};
+
   return (
     <>
       {/* Cart Icon */}
-      <Button variant="info" onClick={handleCartIconClick}>Open Cart</Button>
+      <Button variant="info" onClick={handleCartIconClick}>Open Cart <span style={styling}>{cartCtx.totalQuantity}</span></Button>
 
       {/* Cart Modal */}
       {showCart && (
@@ -42,6 +44,7 @@ const Cart = () => {
                 <Button variant="danger" onClick={() => handleRemoveItem(index)}>Remove</Button>
               </div>
             ))}
+            <p>Total Amount: ${cartCtx.totalAmount.toFixed(2)}</p>
             <Button onClick={handleCloseCart}>Close Cart</Button>
           </div>
         </Modal>
