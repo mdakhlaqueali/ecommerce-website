@@ -4,6 +4,7 @@ import MyNavbar from './components/Navbar';
 import About from './pages/About';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import AuthPage from './pages/AuthPage';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/store" element={<Showproducts />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/auth" element={<AuthPage/>}/>
       </Routes>
     </div>
   );
